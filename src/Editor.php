@@ -15,16 +15,17 @@ class Editor extends Field
      * @var array
      */
     protected static $css = [
-        'public/static/library/simplemde/dist/simplemde.min.css',
+        'static/library/simplemde/dist/simplemde.min.css',
     ];
 
     /**
      * @var array
      */
     protected static $js = [
-        'public/static/library/simplemde/dist/simplemde.min.js',
-        'public/static/library/marked/marked.min.js',
-        'public/static/library/dompurify/dist/purify.min.js'
+        'static/library/simplemde/dist/simplemde.min.js',
+        'static/library/marked/marked.min.js',
+        'static/library/dompurify/dist/purify.min.js',
+        'static/library/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
     ];
 
     /**
