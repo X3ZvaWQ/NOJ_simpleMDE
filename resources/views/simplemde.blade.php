@@ -14,7 +14,16 @@
 
     </div>
 </div>
-
+<div id="noj-markdown-editor-preview"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$$$','$$$'], ["\\(","\\)"] ],
+            processEscapes: true
+        },
+        showMathMenu: false
+    });
+</script>
 <style>
 .{{ $scopeClass }} .editor-toolbar.fullscreen, .{{ $scopeClass }} .CodeMirror-fullscreen {
     z-index: 10000 !important;
@@ -22,5 +31,8 @@
 
 .{{ $scopeClass }} .CodeMirror {
     height: {{ $height ?: 300 }}px;
+}
+#noj-markdown-editor-preview{
+    display: none;
 }
 </style>
