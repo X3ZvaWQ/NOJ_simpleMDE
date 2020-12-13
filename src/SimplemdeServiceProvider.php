@@ -20,6 +20,13 @@ class SimplemdeServiceProvider extends ServiceProvider
         if ($views = $extension->views()) {
             $this->loadViewsFrom($views, 'laravel-admin-simplemde');
         }
+        
+        if ($this->app->runningInConsole() && $assets = $extension->assets()) {
+            $this->publishes(
+                [$assets => public_path('vendor/laravel-admin-ext/simplemde')],
+                'laravel-admin-simplemde'
+            );
+        }
 
         Admin::booting(function () {
             Form::extend('simplemde', Editor::class);

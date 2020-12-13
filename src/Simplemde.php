@@ -8,5 +8,7 @@ class Simplemde extends Extension
 {
     public $name = 'simplemde';
 
-    public $views = __DIR__.'/../resources';
+    public $views = __DIR__.'/../resources/views';
+
+    public $assets = __DIR__.'/../resources/assets';
 }
