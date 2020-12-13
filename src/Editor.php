@@ -55,6 +55,8 @@ class Editor extends Field
 
         $name = $this->formatName($this->column);
 
+        $config = (array) Simplemde::config('config');
+
         $config = json_encode($config);
 
         $varName = 'simplemde_'.uniqid();
