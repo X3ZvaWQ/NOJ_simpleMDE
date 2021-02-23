@@ -6,7 +6,7 @@
 
         @include('admin::form.error')
 
-        <textarea id="{{$id}}">{!! old($column, $value) !!}</textarea>
+        <textarea id="{{$id}}">{{ old($column, $value) }}</textarea>
 
         <input type="hidden" name="{{$name}}" value="{{ old($column, $value) }}"/>
 
