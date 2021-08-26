@@ -87,9 +87,7 @@ options.renderingoptions = options.renderingoptions || {
     codeSyntaxHighlighting: true
 };
 options.previewRender = options.previewRender || function (plainText) {
-    document.getElementById("noj-markdown-editor-preview").innerHTML=marked(plainText, {
-        sanitize: true,
-        sanitizer: DOMPurify.sanitize,
+    document.getElementById("noj-markdown-editor-preview").innerHTML=DOMPurify.sanitize(marked(plainText, {
         highlight: function (code, lang) {
             var language = hljs.getLanguage(code);
             if (!language) {
@@ -97,7 +95,7 @@ options.previewRender = options.previewRender || function (plainText) {
             }
             return hljs.highlight(lang, code).value;
         }
-    });
+    }));
     MathJax.Hub.Queue(["Typeset",MathJax.Hub,"noj-markdown-editor-preview"]);
     return document.getElementById("noj-markdown-editor-preview").innerHTML;
 };
